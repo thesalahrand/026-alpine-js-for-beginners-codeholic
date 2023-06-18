@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpine.js</title>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+</head>
+
+<body>
+  <!-- x-data, x-text, x-html -->
+  <div x-data="{ name: 'Mohammad Salah', message: 'Hello <u>world</u>!' }">
+    <p x-text="name"></p>
+    <p x-html="message"></p>
+  </div>
+
+  <div x-data x-text="await (await fetch('https://jsonplaceholder.typicode.com/todos/1')).text()"></div>
+</body>
+
+</html>
