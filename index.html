@@ -35,9 +35,12 @@
   </div> -->
 
   <!-- data less components  -->
-  <div x-data @click="alert('Something went wrong!')">
+  <!-- <div x-data @click="alert('Something went wrong!')">
     Click me...
-  </div>
+  </div> -->
+
+  <!-- store  -->
+  <div x-data x-text="$store.currentUser.username"></div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   <script src="app.js"></script>
