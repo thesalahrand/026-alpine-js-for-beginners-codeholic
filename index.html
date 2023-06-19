@@ -162,8 +162,11 @@
   </style> -->
 
   <!-- x-bind:style  -->
-  <button x-data="{ clicked: false }" x-bind:style="{marginLeft: clicked ? '200px' : ''}"
-    @click="clicked = !clicked">Click Me</button>
+  <!-- <button x-data="{ clicked: false }" x-bind:style="{marginLeft: clicked ? '200px' : ''}"
+    @click="clicked = !clicked">Click Me</button> -->
+
+  <!-- x-bind:id  -->
+  <button x-data="{ id: '' }" x-bind:id="id" @click="id = Math.random()">Click Me</button>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   <script src="app.js"></script>
