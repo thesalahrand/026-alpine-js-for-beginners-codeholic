@@ -55,7 +55,7 @@
   </div> -->
 
   <!-- scoping  -->
-  <div x-data="{
+  <!-- <div x-data="{
     name: 'A',
     gender: 'Male',
     age: 24
@@ -72,8 +72,27 @@
         <p x-text="age"></p>
       </div>
     </div>
-  </div>
+  </div> -->
 
+  <!-- getters and setters  -->
+  <div x-data="{ 
+    open: false,
+    get isOpen() {
+      return this.open;
+    },
+    set isOpen(open) {
+      this.open = open;
+    },
+    toggle() {
+      this.isOpen = !this.isOpen;
+    }
+  }
+  ">
+    <button @click="toggle()">Open/Close</button>
+    <div x-show="open">
+      Content...
+    </div>
+  </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   <script src="app.js"></script>
