@@ -169,10 +169,28 @@
   <!-- <button x-data="{ id: '' }" x-bind:id="id" @click="id = Math.random()">Click Me</button> -->
 
   <!-- challenge #1  -->
-  <div x-data="{ colors: ['red', 'green', 'blue'] }">
+  <!-- <div x-data="{ colors: ['red', 'green', 'blue'] }">
     <template x-for="color in colors">
       <div style="width: 40px; height: 40px; display: inline-block;" x-bind:style="{ backgroundColor: color }"></div>
     </template>
+  </div> -->
+
+  <!-- x-on  -->
+  <div @scroll.window="console.log('window is being scrolled')" x-data
+    @edit="console.log('dispatched custom edit event')">
+    <div x-data="{ open: false }">
+      <button @click="open = true">Open Modal</button>
+      <div x-show="open" @click.outside="open = false">
+        Content...
+      </div>
+    </div>
+
+    <button @click="console.log('clicked', $event)">Click Me</button>
+    <input type="text" @keyup="console.log('keyup')">
+    <input type="text" @keyup.once="console.log('once')">
+    <input type="text" @keyup.debounce="console.log('debounce')">
+
+    <button @click="$dispatch('edit')">Edit</button>
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
