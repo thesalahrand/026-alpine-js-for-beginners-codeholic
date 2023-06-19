@@ -95,7 +95,7 @@
   </div> -->
 
   <!-- x-show and x-transition  -->
-  <div x-data="{ 
+  <!-- <div x-data="{ 
       open: false,
       toggle() {
         this.open = !this.open;
@@ -106,6 +106,22 @@
     <div x-show="open" x-transition:enter.duration.200ms x-transition:leave.duration.2000ms>
       Content...
     </div>
+  </div> -->
+
+  <!-- x-if  -->
+  <div x-data="{ 
+        open: false,
+        toggle() {
+          this.open = !this.open;
+        }
+      }
+      ">
+    <button @click="toggle()">Open/Close</button>
+    <template x-if="open">
+      <div>
+        Content...
+      </div>
+    </template>
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
