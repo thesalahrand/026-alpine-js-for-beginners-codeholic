@@ -43,7 +43,7 @@
   <!-- <div x-data x-text="$store.currentUser.username"></div> -->
 
   <!-- x-init  -->
-  <div x-init="console.log('init')"></div>
+  <!-- <div x-init="console.log('init')"></div>
   <div x-data="{
       init() {
         console.log('init 2');
@@ -52,6 +52,26 @@
   </div>
   <div x-data="{todo: {}}" x-init="todo = await (await fetch('https://jsonplaceholder.typicode.com/todos/1')).json()">
     <p x-text="todo.title"></p>
+  </div> -->
+
+  <!-- scoping  -->
+  <div x-data="{
+    name: 'A',
+    gender: 'Male',
+    age: 24
+  }">
+    <div x-data="{
+      name: 'B',
+      gender: 'Female',
+    }">
+      <div x-data="{
+        name: 'C',
+      }">
+        <p x-text="name"></p>
+        <p x-text="gender"></p>
+        <p x-text="age"></p>
+      </div>
+    </div>
   </div>
 
 
