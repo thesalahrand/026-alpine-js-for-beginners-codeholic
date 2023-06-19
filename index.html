@@ -176,7 +176,7 @@
   </div> -->
 
   <!-- x-on  -->
-  <div @scroll.window="console.log('window is being scrolled')" x-data
+  <!-- <div @scroll.window="console.log('window is being scrolled')" x-data
     @edit="console.log('dispatched custom edit event')">
     <div x-data="{ open: false }">
       <button @click="open = true">Open Modal</button>
@@ -191,6 +191,12 @@
     <input type="text" @keyup.debounce="console.log('debounce')">
 
     <button @click="$dispatch('edit')">Edit</button>
+  </div> -->
+
+  <!-- x-model  -->
+  <div x-data="{ keyword: 'laptop' }">
+    <input type="text" x-model.debounce.750ms="keyword">
+    <p x-text="keyword"></p>
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
