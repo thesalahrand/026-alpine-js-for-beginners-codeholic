@@ -125,7 +125,7 @@
   </div> -->
 
   <!-- x-for  -->
-  <ul x-data="{
+  <!-- <ul x-data="{
     colors: [
       { id: 1, color: 'Red' },
       { id: 2, color: 'Orange' },
@@ -135,7 +135,16 @@
     <template x-for="color in colors" :key="color.id">
       <li x-text="color.color"></li>
     </template>
-  </ul>
+  </ul> -->
+
+  <!-- x-for in range  -->
+  <div x-data>
+    <template x-for="i in 5">
+      <div>
+        <p x-text="i"></p>
+      </div>
+    </template>
+  </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   <script src="app.js"></script>
