@@ -147,7 +147,7 @@
   </div> -->
 
   <!-- x-bind:class  -->
-  <div x-data="{ clicked: false }">
+  <!-- <div x-data="{ clicked: false }">
     <button x-bind:class="clicked ? 'btn' : ''" @click="clicked = !clicked">Click Me</button>
   </div>
   <style>
@@ -159,7 +159,11 @@
       padding: 8px 20px;
       border-radius: 4px;
     }
-  </style>
+  </style> -->
+
+  <!-- x-bind:style  -->
+  <button x-data="{ clicked: false }" x-bind:style="{marginLeft: clicked ? '200px' : ''}"
+    @click="clicked = !clicked">Click Me</button>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   <script src="app.js"></script>
