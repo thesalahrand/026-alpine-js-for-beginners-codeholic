@@ -194,9 +194,17 @@
   </div> -->
 
   <!-- x-model  -->
-  <div x-data="{ keyword: 'laptop' }">
+  <!-- <div x-data="{ keyword: 'laptop' }">
     <input type="text" x-model.debounce.750ms="keyword">
     <p x-text="keyword"></p>
+  </div> -->
+
+  <!-- challenge #2  -->
+  <div x-data="{ text: '', text2: '', text3: '' }">
+    <input type="text" x-model.debounce="text">
+    <input type="text" x-model.debounce="text2">
+    <input type="text" x-model.debounce="text3">
+    <button x-text="text" x-bind:style="{ backgroundColor: text2 }" x-bind:id="text3"></button>
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
