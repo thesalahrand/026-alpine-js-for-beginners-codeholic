@@ -40,7 +40,20 @@
   </div> -->
 
   <!-- store  -->
-  <div x-data x-text="$store.currentUser.username"></div>
+  <!-- <div x-data x-text="$store.currentUser.username"></div> -->
+
+  <!-- x-init  -->
+  <div x-init="console.log('init')"></div>
+  <div x-data="{
+      init() {
+        console.log('init 2');
+      }
+    }">
+  </div>
+  <div x-data="{todo: {}}" x-init="todo = await (await fetch('https://jsonplaceholder.typicode.com/todos/1')).json()">
+    <p x-text="todo.title"></p>
+  </div>
+
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   <script src="app.js"></script>
