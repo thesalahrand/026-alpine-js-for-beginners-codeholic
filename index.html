@@ -75,7 +75,7 @@
   </div> -->
 
   <!-- getters and setters  -->
-  <div x-data="{ 
+  <!-- <div x-data="{ 
     open: false,
     get isOpen() {
       return this.open;
@@ -90,6 +90,20 @@
   ">
     <button @click="toggle()">Open/Close</button>
     <div x-show="open">
+      Content...
+    </div>
+  </div> -->
+
+  <!-- x-show and x-transition  -->
+  <div x-data="{ 
+      open: false,
+      toggle() {
+        this.open = !this.open;
+      }
+    }
+    ">
+    <button @click="toggle()">Open/Close</button>
+    <div x-show="open" x-transition:enter.duration.200ms x-transition:leave.duration.2000ms>
       Content...
     </div>
   </div>
