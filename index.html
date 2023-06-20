@@ -221,10 +221,23 @@
   </div> -->
 
   <!-- x-ref -->
-  <div x-data>
+  <!-- <div x-data>
     <input type="email" x-ref="inputEmail" placeholder="Enter your email">
     <button @click="$refs.inputEmail.style.borderColor = 'green'">Check</button>
+  </div> -->
+
+  <!-- x-cloak  -->
+  <div x-data="dropdown">
+    <button @click="toggle()">Open/Close</button>
+    <div x-show="open" x-cloak>
+      Content...
+    </div>
   </div>
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   <script src="app.js"></script>
