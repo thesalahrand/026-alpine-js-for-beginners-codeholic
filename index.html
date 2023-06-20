@@ -227,7 +227,7 @@
   </div> -->
 
   <!-- x-cloak  -->
-  <div x-data="dropdown">
+  <!-- <div x-data="dropdown">
     <button @click="toggle()">Open/Close</button>
     <div x-show="open" x-cloak>
       Content...
@@ -237,7 +237,21 @@
     [x-cloak] {
       display: none !important;
     }
-  </style>
+  </style> -->
+
+  <!-- x-teleport  -->
+  <div x-data>
+    <p>Some content..</p>
+    <div x-data="{ modal: false }">
+      <button @click="modal = !modal">Open/Close Modal</button>
+      <template x-teleport="body">
+        <div x-show="modal">
+          Modal content..
+        </div>
+      </template>
+    </div>
+    <p>More content..</p>
+  </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   <script src="app.js"></script>
