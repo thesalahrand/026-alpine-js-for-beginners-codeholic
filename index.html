@@ -264,8 +264,13 @@
   <!-- $store  -->
 
   <!-- $watch -->
-  <div x-data="{ modal: false }" x-init="$watch('modal', (value, oldValue) => console.log(value, oldValue))">
+  <!-- <div x-data="{ modal: false }" x-init="$watch('modal', (value, oldValue) => console.log(value, oldValue))">
     <button @click="modal = !modal">Toggle Modal</button>
+  </div> -->
+
+  <!-- $nextTick  -->
+  <div x-data="{ title: 'Hello' }">
+    <button x-text="title" @click="title = 'Hello World!'; $nextTick(()=> { console.log(title) });">Click me</button>
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
