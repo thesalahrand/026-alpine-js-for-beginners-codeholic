@@ -254,8 +254,18 @@
   </div> -->
 
   <!-- Magic Properties  -->
-  <div x-data>
+  <!-- $el  -->
+  <!-- <div x-data>
     <button @click="console.log($el)">Click me</button>
+  </div> -->
+
+  <!-- $refs  -->
+
+  <!-- $store  -->
+
+  <!-- $watch -->
+  <div x-data="{ modal: false }" x-init="$watch('modal', (value, oldValue) => console.log(value, oldValue))">
+    <button @click="modal = !modal">Toggle Modal</button>
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
