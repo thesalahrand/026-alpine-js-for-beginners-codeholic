@@ -240,7 +240,7 @@
   </style> -->
 
   <!-- x-teleport  -->
-  <div x-data>
+  <!-- <div x-data>
     <p>Some content..</p>
     <div x-data="{ modal: false }">
       <button @click="modal = !modal">Open/Close Modal</button>
@@ -251,6 +251,11 @@
       </template>
     </div>
     <p>More content..</p>
+  </div> -->
+
+  <!-- Magic Properties  -->
+  <div x-data>
+    <button @click="console.log($el)">Click me</button>
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
