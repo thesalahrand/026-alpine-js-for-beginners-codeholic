@@ -269,8 +269,19 @@
   </div> -->
 
   <!-- $nextTick  -->
-  <div x-data="{ title: 'Hello' }">
+  <!-- <div x-data="{ title: 'Hello' }">
     <button x-text="title" @click="title = 'Hello World!'; $nextTick(()=> { console.log(title) });">Click me</button>
+  </div> -->
+
+  <!-- $root  -->
+  <div x-data>
+    <div>
+      <div>
+        <div>
+          <button @click="console.log($root)">Click me</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
