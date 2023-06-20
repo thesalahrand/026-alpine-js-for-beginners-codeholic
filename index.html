@@ -285,8 +285,14 @@
   </div> -->
 
   <!-- $data  -->
-  <div x-data="{ name: 'Mohammad Salah', age: 30 }">
+  <!-- <div x-data="{ name: 'Mohammad Salah', age: 30 }">
     <button @click="console.log($data.age)">Click me</button>
+  </div> -->
+
+  <!-- $id  -->
+  <div x-data x-id="['text-input']">
+    <label :for="$id('text-input')">Name</label>
+    <input type="text" :id="$id('text-input')">
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
