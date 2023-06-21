@@ -38,6 +38,58 @@
     </ul>
   </div>
 
+  <!-- Modal  -->
+  <div x-data="{
+    open: false,
+    accept() {
+      console.log('accepted')
+    }
+  }">
+    <button @click="open = true" class="py-2 px-6 bg-purple-600 hover:bg-opacity-95 text-white rounded-md shadow">
+      Toggle Modal
+    </button>
+    <template x-teleport="body">
+      <div x-show="open" class="fixed flex justify-center items-center left-0 top-0 bottom-0 right-0 z-10 bg-black/50">
+        <div x-show="open" x-transition @click.outside="open = false" class="[w-90%] md:w-1/2 bg-white rounded-lg">
+          <div class="py-2 px-4 text-lg font-semibold bg-gray-100 rounded-t-lg flex items-center justify-between">
+            <h2>Modal Title</h2>
+            <i class="bi bi-x-lg cursor-pointer" @click="open = false"></i>
+          </div>
+          <div class="p-4">Modal Content</div>
+          <div class="py-2 px-4 text-lg flex justify-end font-semibold bg-gray-100 rounded-b-lg">
+            <button @click="accept()"
+              class="inline-flex items-center py-1 px-3 bg-emerald-500 hover:bg-opacity-95 text-white rounded-md shadow mr-2">
+              Accept
+            </button>
+            <button @click="open = false"
+              class="inline-flex items-center py-1 px-3 bg-gray-300 hover:bg-opacity-95 text-gray-800 rounded-md shadow">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <!-- Tabs  -->
+  <div x-data="{
+      tabs: ['Home', 'Users', 'Settings', 'Orders'],
+      activeTab: 'Home'
+    }">
+    <div class="flex">
+      <template x-for="tab in tabs">
+        <a @click="activeTab = tab" x-text="tab" class="py-2 px-3 bg-white cursor-pointer border"
+          x-bind:class="{'border-purple-500 text-blue-500' : activeTab === tab}"></a>
+      </template>
+    </div>
+    <div class="py-2 px-3 bg-white border">
+      <div x-show="activeTab === 'Home'">Home</div>
+      <div x-show="activeTab === 'Users'">Users</div>
+      <div x-show="activeTab === 'Settings'">Settings</div>
+      <div x-show="activeTab === 'Orders'">Orders</div>
+    </div>
+  </div>
+
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="app.js"></script>
