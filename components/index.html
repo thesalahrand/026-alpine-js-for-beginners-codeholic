@@ -163,6 +163,58 @@
     </template>
   </div>
 
+  <!-- Notification  -->
+  <div x-data="{
+      visible: true, 
+      timeout: 5000,
+      percent: 0,
+      interval: null,
+      close() {
+        this.visible = false
+        clearInterval(this.interval)
+      },
+      init() {
+        setTimeout(() => {
+          this.visible = false 
+        }, this.timeout)
+
+        const startDate = Date.now()
+        const endDate = Date.now() + this.timeout
+
+        setInterval(() => {
+          const date = Date.now()
+          this.percent = (date - startDate) * 100 / (endDate - startDate)
+          if(this.percent >= 100) {
+            clearInterval(this.interval)
+          }
+        }, 30)
+      }
+    }" x-show="visible" class="relative py-2 px-4 pb-4 bg-emerald-500 text-white">
+    <div class="font-semibold mb-2">Lorem ipsum dolor sit amet.</div>
+    <div class="text-sm">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis assumenda minus cum delectus nobis molestias
+      autem exercitationem optio eaque laborum, voluptatibus consectetur et voluptatum alias amet! Omnis, quibusdam.
+      Voluptatem libero voluptatibus similique beatae aperiam vel asperiores, incidunt quaerat veniam quis soluta amet.
+      Eligendi vitae iste eveniet quas quos, enim nostrum sint ea illum nisi nulla ipsum laboriosam ad laborum placeat
+      quod veritatis facere natus neque maiores consequatur rem perferendis voluptatem. Modi quisquam ut eligendi
+      accusantium totam aspernatur tenetur, nobis deleniti sunt perferendis soluta libero. Ipsa, quibusdam nihil,
+      repudiandae totam odit ad, iste distinctio maxime magnam quasi obcaecati. Delectus, quaerat sequi ipsum, quidem
+      ullam voluptas labore dolorem quisquam vitae praesentium sunt ex pariatur doloremque deserunt unde exercitationem.
+      Illo non officia, alias, molestias repellat reprehenderit sed sint molestiae inventore minus dignissimos? Minus
+      nesciunt sunt nobis tempora mollitia atque obcaecati sapiente. Amet quos labore quod unde sequi, architecto
+      accusamus recusandae tempora omnis excepturi. Ullam quos nam provident modi veniam illo dicta quibusdam aliquid
+      corrupti, nulla error ea eveniet nemo, beatae praesentium. Dignissimos repudiandae ut consequuntur at cupiditate
+      aspernatur adipisci labore natus optio hic commodi iusto ratione esse, provident nulla dolore corrupti porro
+      quibusdam quas suscipit et? Adipisci assumenda quod et eligendi unde minima!
+    </div>
+    <button @click="close()"
+      class="absolute flex items-center justify-center right-2 top-2 w-[30px] h-[30px] rounded-full hover:bg-black/10 transition-colors">
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <div class="absolute left-0 bottom-0 right-0 h-[6px] bg-black/10" :style="{ 'width': `${percent}%` }">
+    </div>
+  </div>
+
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="app.js"></script>
