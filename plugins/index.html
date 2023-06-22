@@ -38,17 +38,26 @@
   </div> -->
 
   <!-- Focus  -->
-  <div x-data="{ open: false}">
+  <!-- <div x-data="{ open: false}">
     <button @click="open = !open">Click me</button>
     <div x-show="open" x-trap="true">
       <button class="bg-gray-100">Lorem</button>
       <input type="text" class="border">
       <input type="text" class="border">
     </div>
+  </div> -->
+
+  <!-- Collapse  -->
+  <div x-data="{ open: false }">
+    <button @click="open = !open" class="px-6 py-2 bg-purple-600 text-white rounded-md">Click me</button>
+    <p x-show="open" x-collapse.duration.500ms.min.100px>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi maiores fuga laborum aliquid repellat, consectetur itaque voluptatem quisquam. Asperiores quaerat mollitia et sint cupiditate deserunt, dolorem inventore ullam fugiat ut exercitationem, molestias assumenda, cumque soluta harum voluptas nulla quo tenetur a reiciendis unde consequatur? Autem aperiam delectus consequuntur, tempora reprehenderit vel atque! Adipisci saepe veniam expedita voluptate soluta, unde officia quis libero ipsam autem sequi ut quidem, dignissimos facilis voluptates quasi pariatur! Enim consectetur repellendus adipisci accusamus quis ipsum sequi. Similique, vel odit odio voluptatem a, sequi consequuntur dolore voluptates neque velit ut voluptate quidem accusamus voluptas suscipit quo id necessitatibus, pariatur assumenda nam sit? Cupiditate soluta amet laboriosam, modi quidem iusto excepturi culpa fugiat earum non tenetur quas minima quia aliquid quibusdam beatae, esse sequi at? Nobis ipsum, perspiciatis illum assumenda harum quo culpa odio veritatis officia deleniti placeat voluptatem, quasi non qui fugit quos, sit nisi ab doloribus optio? Repellendus vero molestias, quo dolores laudantium id, consectetur velit ratione, eligendi est molestiae. Odit culpa non ex, veritatis ipsam distinctio eveniet vitae fugiat sequi molestias tenetur accusamus excepturi laboriosam doloribus quibusdam magnam provident perferendis labore saepe aspernatur totam nobis. Cumque laboriosam alias in obcaecati quam saepe pariatur culpa maxime?
+    </p>
   </div>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Alpine Plugins -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.12.1/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.12.1/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.12.1/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.12.1/dist/cdn.min.js"></script>
