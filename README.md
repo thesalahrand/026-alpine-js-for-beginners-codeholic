@@ -1,0 +1,1 @@
+This is my [first follow up project](https://github.com/thesalahrand/026-alpine-js-for-beginners-codeholic) exploring [Alpine.js](https://alpinejs.dev/) for the first time. I am very impressed about how [the instructor](https://www.youtube.com/watch?v=5ILDMMLgX0E) makes everything easy to follow.
