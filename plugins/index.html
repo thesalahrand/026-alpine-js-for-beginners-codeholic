@@ -26,8 +26,20 @@
   </div>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+  <!-- Persist  -->
+  <div
+    x-data="{ count: $persist(0).as('my-count').using(sessionStorage) }"
+  >
+    <button
+      class="inline-flex items-center py-2 px-6 bg-purple-600 hover:bg-opacity-95 text-white rounded-md shadow"
+      x-on:click="count++"
+    >Increment</button>
+    <span x-text="count"></span>
+  </div>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Alpine Plugins -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.12.1/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.12.1/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.12.1/dist/cdn.min.js"></script>
   <!-- Alpine Core -->
