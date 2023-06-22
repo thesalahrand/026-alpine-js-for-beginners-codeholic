@@ -215,6 +215,34 @@
     </div>
   </div>
 
+  <!-- Popover  -->
+  <div x-data="{
+    show: false,
+    title: 'Test Popover',
+    message: 'Test <b>message</b>',
+    showPopover() {
+      this.show = !this.show;
+    }
+  }"
+  class="relative flex justify-center"
+  >
+    <button
+      @click="showPopover"
+      class="inline-flex items-center py-2 px-6 bg-purple-600 hover:bg-opacity-95 text-white rounded-md shadow"
+    >Popover</button>
+    <div
+      x-show="show"
+      x-transition
+      class="absolute mb-2 bottom-[100%] shadow-lg bg-white w-[200px] rounded"
+    >
+      <div class="flex justify-between items-center font-semibold py-1 px-2">
+        <span x-text="title"></span>
+        <i class="bi bi-x-lg"></i>
+      </div>
+      <div x-html="message" class="p-3 text-sm"></div>
+    </div>
+  </div>
+
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="app.js"></script>
