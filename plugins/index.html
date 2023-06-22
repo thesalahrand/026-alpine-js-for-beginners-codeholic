@@ -7,16 +7,16 @@
 </head>
 <body>
   <!-- Mask  -->
-  <div x-data>
+  <!-- <div x-data>
     <input x-mask="99/99/9999" placeholder="MM/DD/YYYY">
     <input
       x-mask:dynamic="$input.startsWith('34') || $input.startsWith('37') ? '9999 999999 99999': '9999 9999 9999 9999'"
     >
     <input x-mask:dynamic="$money($input)">
-  </div>
+  </div> -->
 
   <!-- Intersect  -->
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <div 
     x-data="{ dataSrc: '../img/1.avif', src: null }" 
     class="w-48 h-48 border"
@@ -24,10 +24,10 @@
   >
     <img :src="src" x-show="src" alt="">
   </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
 
   <!-- Persist  -->
-  <div
+  <!-- <div
     x-data="{ count: $persist(0).as('my-count').using(sessionStorage) }"
   >
     <button
@@ -35,10 +35,21 @@
       x-on:click="count++"
     >Increment</button>
     <span x-text="count"></span>
+  </div> -->
+
+  <!-- Focus  -->
+  <div x-data="{ open: false}">
+    <button @click="open = !open">Click me</button>
+    <div x-show="open" x-trap="true">
+      <button class="bg-gray-100">Lorem</button>
+      <input type="text" class="border">
+      <input type="text" class="border">
+    </div>
   </div>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Alpine Plugins -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.12.1/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.12.1/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.12.1/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.12.1/dist/cdn.min.js"></script>
