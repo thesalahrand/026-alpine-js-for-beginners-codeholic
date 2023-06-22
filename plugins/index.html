@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpine.js Plugins</title>
+</head>
+<body>
+  <!-- Mask  -->
+  <div x-data>
+    <input x-mask="99/99/9999" placeholder="MM/DD/YYYY">
+    <input
+      x-mask:dynamic="$input.startsWith('34') || $input.startsWith('37') ? '9999 999999 99999': '9999 9999 9999 9999'"
+    >
+    <input x-mask:dynamic="$money($input)">
+  </div>
+
+  <!-- Intersect  -->
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div 
+    x-data="{ dataSrc: '../img/1.avif', src: null }" 
+    class="w-48 h-48 border"
+    x-intersect.once.full="src = dataSrc"
+  >
+    <img :src="src" x-show="src" alt="">
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine Plugins -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.12.1/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.12.1/dist/cdn.min.js"></script>
+  <!-- Alpine Core -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+</body>
+</html>
